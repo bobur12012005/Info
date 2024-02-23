@@ -29,11 +29,9 @@ form.onsubmit = (event) => {
 
     if (error) {
         modal.style.display = 'flex'
-        body.style.overflowY = 'hidden'
 
         close_modal.onclick = () => {
             modal.style.display = 'none'
-            body.style.overflowY = 'auto'
         }
         
         return

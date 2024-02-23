@@ -1,0 +1,213 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.total_container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-block: 70px;
+
+    .top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        h1 {
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .stats {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            font-size: 14px;
+        }
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        .form_cont {
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            align-items: start;
+
+            .col {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                }
+            }
+        }
+
+        button {
+            all: unset;
+            width: 270px;
+            height: 50px;
+            border-radius: 5px;
+            background: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            transition: ease 0.3s;
+            color: black;
+            background: aqua;
+        }
+
+        button:active {
+            transform: scale(1.00);
+            transition: ease 0.3s;
+            color: white;
+            background: blue;
+        }
+    }
+}
+
+label span {
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+label input {
+    width: 270px;
+    height: 50px;
+    padding-inline: 10px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    border: 2px solid #c4c4c4;
+    position: relative;
+}
+
+label input::placeholder {
+    color: #b9b9b9;
+}
+
+
+
+/* addClass */
+.req {
+    color: blue;
+}
+
+.req input {
+    border-color: blue;
+}
+
+.error {
+    color: red;
+    position: relative;
+}
+
+.error::after {
+    position: absolute;
+    content: "";
+    display: flex;
+    width: 20px;
+    height: 20px;
+    right: -30px;
+    top: 35px;
+    background-image: url(./warn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.error input {
+    border-color: red;
+}
+
+
+
+/* modal */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000007c;
+
+    .content {
+        width: 400px;
+        height: fit-content;
+        padding: 30px 30px 40px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 2px solid red;
+        box-shadow: inset 0px 0px 10px 5px red;
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: red;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+
+        button {
+            all: unset;
+            width: 200px;
+            height: 35px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            transition: 0.3s ease;
+        }
+        button:active {
+            transform: scale(1.00);
+            transition: 0.3s ease;
+        }
+    }
+}

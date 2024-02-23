@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Forms</title>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <div class="total_container">
+            <div class="top">
+                <h1>Form</h1>
+                <div class="stats">
+                    <span>All: 12</span>
+                    <span>Need: 7</span>
+                    <span id="success">Success: 7/7</span>
+                    <span id="error">Error: 0/7</span>
+                </div>
+            </div>
+
+            <form name="sign_up">
+                <div class="form_cont">
+
+                    <div class="col">
+                        <label class="req" for="name">
+                            <span>Name</span>
+                            <input type="text" id="name" placeholder="name" name="name">
+                        </label>
+                        <label for="surname">
+                            <span>Surname</span>
+                            <input type="text" id="surname" placeholder="surname" name="surname">
+                        </label>
+                        <label class="req" for="email">
+                            <span>E-mail</span>
+                            <input type="email" id="email" placeholder="e-mail" name="email">
+                        </label>
+                        <label for="phone">
+                            <span>Phone number</span>
+                            <input type="tel" id="phone" placeholder="telephone" name="phone">
+                        </label>
+                        <label for="mom">
+                            <span>Your mom's name</span>
+                            <input type="text" id="mom" placeholder="mom's name" name="mom">
+                        </label>
+                        <label for="dad">
+                            <span>Your dad's name</span>
+                            <input type="text" id="dad" placeholder="dad's name" name="dad">
+                        </label>
+                    </div>
+
+                    <div class="col">
+                        <label class="req" for="age">
+                            <span>Age</span>
+                            <input type="number" id="age" placeholder="age" name="age">
+                        </label>
+                        <label class="req" for="bio">
+                            <span>About you</span>
+                            <input type="text" id="bio" placeholder="bio" name="bio">
+                        </label>
+                        <label class="req" for="js">
+                            <span>What is JavaScript?</span>
+                            <input type="text" id="js" placeholder="JavaScript" name="js">
+                        </label>
+                        <label class="req" for="html">
+                            <span>What is HTML?</span>
+                            <input type="text" id="html" placeholder="HTML" name="html">
+                        </label>
+                        <label class="req" for="css">
+                            <span>What is CSS?</span>
+                            <input type="text" id="css" placeholder="CSS" name="css">
+                        </label>
+                        <label for="f_car">
+                            <span>Your favorite car</span>
+                            <input type="text" id="f_car" placeholder="car taste" name="f_car">
+                        </label>
+                    </div>
+
+                </div>
+                <button>submit</button>
+            </form>
+        </div>
+
+        <div id="modal">
+            <div class="content">
+                <h1>ERROR!</h1>
+                <span>Please, fill all the fields to continue...</span>
+                <button>OK</button>
+            </div>
+        </div>
+
+
+
+        <script src="./index.js"></script>
+
+    </body>
+
+    </html>

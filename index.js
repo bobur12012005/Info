@@ -24,7 +24,6 @@ form.onsubmit = (event) => {
 
     inputs.forEach(inp => {
         let isRequired = inp.parentNode.classList.contains('req')
-        let reg = regs[inp.name]
 
         if (isRequired && inp.value.length === 0) {
             error = true
@@ -33,14 +32,21 @@ form.onsubmit = (event) => {
             error_fields.innerHTML = 'Error: ' + count_error + '/7'
             count_success--
             successful_fields.innerHTML = 'Success: ' + count_success + '/7'
-        } else if (reg && !reg.test(inp.value)) {
-            error = true
-            inp.parentNode.classList.add('error')
-            count_error++
-            error_fields.innerHTML = 'Error: ' + count_error + '/7'
-            count_success--
-            successful_fields.innerHTML = 'Success: ' + count_success + '/7'
+        } else {
+            inp.parentNode.classList.remove('error')
         }
+
+        inp.onkeyup = () => {
+            let reg = regs[inp.name]
+
+            if (reg.test(inp.value) || inp.value.length === 0) {
+                inp.parentNode.classList.remove('error')
+            } else {
+                inp.parentNode.classList.add('error')
+            }
+        }
+
+
     })
 
     if (error === true) {

@@ -16,6 +16,18 @@ let regs = {
     email: /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/i
 }
 
+inputs.forEach(inp => {
+    inp.onkeyup = () => {
+        let reg = regs[inp.name]
+
+        if (reg.test(inp.value) || !inp.value.length === 0) {
+            inp.parentNode.classList.remove('error')
+        } else {
+            inp.parentNode.classList.add('error')
+        }
+    }
+})
+
 form.onsubmit = (event) => {
     event.preventDefault()
     let error = false
@@ -35,18 +47,6 @@ form.onsubmit = (event) => {
         } else {
             inp.parentNode.classList.remove('error')
         }
-
-        inp.onkeyup = () => {
-            let reg = regs[inp.name]
-
-            if (reg.test(inp.value) || inp.value.length === 0) {
-                inp.parentNode.classList.remove('error')
-            } else {
-                inp.parentNode.classList.add('error')
-            }
-        }
-
-
     })
 
     if (error === true) {

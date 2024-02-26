@@ -20,7 +20,7 @@ inputs.forEach(inp => {
     inp.onkeyup = () => {
         let reg = regs[inp.name]
 
-        if (reg.test(inp.value) || !inp.value.length === 0) {
+        if (reg.test(inp.value)) {
             inp.parentNode.classList.remove('error')
         } else {
             inp.parentNode.classList.add('error')
@@ -37,7 +37,7 @@ form.onsubmit = (event) => {
     inputs.forEach(inp => {
         let isRequired = inp.parentNode.classList.contains('req')
 
-        if (isRequired && inp.value.length === 0) {
+        if (isRequired && inp.value.length === 0 || inp.parentNode.classList.contains('error')) {
             error = true
             inp.parentNode.classList.add('error')
             count_error++
